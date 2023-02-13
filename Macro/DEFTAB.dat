@@ -1,0 +1,16 @@
+COPY    START    NULL
+RDBUFF    MACRO   &INDEV,&BUFADR,&RECLTH
+NULL    CLEAR    X
+NULL    CLEAR    A
+NULL    CLEAR    S
+NULL    +LDT    #4096
+NULL    TD    =X'?1'
+NULL    JEQ    *-3
+NULL    RD    =X'?1'
+NULL    COMPR    A,S
+NULL    JEQ    *+11
+NULL    STCH    ?2,X
+NULL    TIXR    T
+NULL    JLT    *-19
+NULL    STX    ?3
+NULL    MEND    NULL
